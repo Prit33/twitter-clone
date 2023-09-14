@@ -58,6 +58,7 @@ export const follow = async (req, res, next) => {       // PUT request: need acc
     const currentUser = await User.findById(req.body.id);
 
     if (!user.followers.includes(req.body.id)) {
+      // console.log(req.body);
       await user.updateOne({
         $push: { followers: req.body.id },          // pushing follower id into followers array of current user 
       });
