@@ -12,7 +12,7 @@ const MainTweet = () => {
   const handleSubmitTweet = async (e) => {
     e.preventDefault();
     try {
-      const submitTweet = await axios.post("https://twitter-clone-z2db.onrender.com/api/tweets", {
+      const submitTweet = await axios.post("/tweets", {
         userId: currentUser._id,
         description: tweetText,
       });
