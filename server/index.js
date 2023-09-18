@@ -3,11 +3,15 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
 import userRoutes from "./routes/users.js";
 import authRoutes from "./routes/auths.js";
 import tweetRoutes from "./routes/tweets.js";
 
 const app = express();
+const cors = require('cors')
 dotenv.config();
 
 const connect = () => {
@@ -21,7 +25,7 @@ const connect = () => {
       throw err;
     });
 };
-
+app.use(cors())
 app.use(cookieParser());
 app.use(express.json());
 app.use("/api/users", userRoutes);

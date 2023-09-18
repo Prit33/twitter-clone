@@ -19,8 +19,8 @@ const Profile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userTweets = await axios.get(`/tweets/user/all/${id}`);
-        const userProfile = await axios.get(`/users/find/${id}`);
+        const userTweets = await axios.get(`https://twitter-clone-z2db.onrender.com/api/tweets/user/all/${id}`);
+        const userProfile = await axios.get(`https://twitter-clone-z2db.onrender.com/api/users/find/${id}`);
 
         setUserTweets(userTweets.data);
       } catch (err) {
@@ -34,7 +34,7 @@ const Profile = () => {
   const handleFollow = async () => {
     if (!currentUser.following.includes(id)) {
       try {
-        const follow = await axios.put(`/users/follow/${id}`, {
+        const follow = await axios.put(`https://twitter-clone-z2db.onrender.com/api/users/follow/${id}`, {
           id: currentUser._id,
         });
         dispatch(following(id));
@@ -43,7 +43,7 @@ const Profile = () => {
       }
     } else {
       try {
-        const unfollow = await axios.put(`/users/unfollow/${id}`, {
+        const unfollow = await axios.put(`https://twitter-clone-z2db.onrender.com/api/users/unfollow/${id}`, {
           id: currentUser._id,
         });
 
@@ -60,7 +60,7 @@ const Profile = () => {
       // console.log(id);
       const userId=currentUser._id
       // console.log(userId)
-      axios.delete(`/tweets/${id}`, { data: { userId: userId} });
+      axios.delete(`https://twitter-clone-z2db.onrender.com/api/tweets/${id}`, { data: { userId: userId} });
       // setData();
     } catch (err) {
       console.log("error", err);

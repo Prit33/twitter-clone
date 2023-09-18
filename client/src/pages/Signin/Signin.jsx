@@ -18,7 +18,7 @@ const Signin = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("/auth/signin", { username, password });         // login needs username and password, POST /auth/sigin
+      const res = await axios.post("https://twitter-clone-z2db.onrender.com/api/auth/signin", { username, password });         // login needs username and password, POST /auth/sigin
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (err) {
@@ -32,7 +32,7 @@ const Signin = () => {
     dispatch(loginStart());
 
     try {
-      const res = await axios.post("/auth/signup", {        // signup need username,email,password | POST /auth/signup
+      const res = await axios.post("https://twitter-clone-z2db.onrender.com/api/auth/signup", {        // signup need username,email,password | POST /auth/signup
         username,
         email,
         password,

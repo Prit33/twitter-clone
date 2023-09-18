@@ -18,7 +18,7 @@ const Tweet = ({ tweet, setData }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const findUser = await axios.get(`/users/find/${tweet.userId}`);
+        const findUser = await axios.get(`https://twitter-clone-z2db.onrender.com/api/users/find/${tweet.userId}`);
 
         setUserData(findUser.data);
       } catch (err) {

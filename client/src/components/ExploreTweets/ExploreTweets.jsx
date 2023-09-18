@@ -11,7 +11,7 @@ const ExploreTweets = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const exploreTweets = await axios.get("/tweets/explore");
+        const exploreTweets = await axios.get("https://twitter-clone-z2db.onrender.com/api/tweets/explore");
         setExplore(exploreTweets.data);
       } catch (err) {
         console.log("error", err);

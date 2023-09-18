@@ -12,7 +12,7 @@ const TimelineTweet = () => {
     const fetchData = async () => {
       try {
         const timelineTweets = await axios.get(       // endpoint: api/tweets/timeline/:id
-          `/tweets/timeline/${currentUser._id}`
+          `https://twitter-clone-z2db.onrender.com/api/tweets/timeline/${currentUser._id}`
         );
 
         const sortedTweets = timelineTweets.data.sort(      // sorting in chronological order

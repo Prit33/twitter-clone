@@ -10,7 +10,7 @@ const UserPlaceholder = ({ setUserData, userData }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userProfile = await axios.get(`/users/find/${id}`);
+        const userProfile = await axios.get(`https://twitter-clone-z2db.onrender.com/api/users/find/${id}`);
         setUserData(userProfile.data);
       } catch (e) {
         console.log(e);

@@ -26,6 +26,7 @@ export const deleteTweet = async (req, res, next) => {      // DELETE REQUEST| n
             res.status(200).json("tweet has been deleted");
             console.log("deleted")
         } else {
+            console.log("You are not allowed to delete !")
             handleError(500, err);
         }
     } catch (err) {
